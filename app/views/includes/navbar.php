@@ -11,7 +11,7 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-secondary me-2">Logout</button>
+            <a class="btn btn-outline-secondary me-2" href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
         </div>
     </header>
 </div>
