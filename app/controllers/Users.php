@@ -114,5 +114,68 @@ class Users extends Controller {
         
     }
 
+
+    public function modalCertGwa() {
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $_POST = filter_input_array(INPUT_POST);
+
+            $data = [
+                'firstname' => trim($_POST['firstname']),
+                'middlename' => trim($_POST['middlename']),
+                'lastname' => trim($_POST['lastname']),
+                'suffix' => trim($_POST['suffix']),
+                'honorific' => trim($_POST['honorific']),
+                'address' => trim($_POST['address']),
+                'course' => trim($_POST['course']),
+                'purpose' => trim($_POST['purpose']),
+                'dateGraduated' => trim($_POST['dateGraduated']),
+                'certNo' => trim($_POST['certNo']),
+                'overAllGwa' => trim($_POST['overAllGwa']),
+                'resNo' => trim($_POST['resNo']),
+                'seriesOf' => trim($_POST['seriesOf']),
+                'orNo' => trim($_POST['orNo']),
+
+            ];
+
+                if($this->userModel->addCertGwa($data)){
+                    $lastId = $this->userModel->getLastId($data);
+                    $this->session->setFlash('status', 'Added successfully!');
+                    $this->session->setFlash('status_icon', 'success');
+                    header('location: '. URLROOT . "/users/generate_cert_gwa/$lastId->id");
+                }else {
+                    $this->session->setFlash('status', 'Error! ');
+                    $this->session->setFlash('status_icon', 'error');
+                    header('location: '. URLROOT . '/users/student');
+                }
+ 
+        }
+    }
+
+
+    public function generate_cert_gwa($id = ''){
+
+        $data = [
+            'id' => $id,
+            'cert_type' => 'gwa'
+        ];
+
+        $certificate = $this->userModel->findCertificateById($data);
+        // $detail = $this->userModel->getSettingsDetails();
+
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        $data = [
+            'certificate' => $certificate,
+            // 'detail' => $detail,            
+        ];
+
+        $this->view('users/generate_cert_gwa', $data);
+    }
+
+
     
 }
