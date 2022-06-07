@@ -8,6 +8,7 @@
         <meta name="author" content="" />
         
         <link rel="stylesheet"  href="<?php echo URLROOT;?>/public/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo URLROOT;?>/public/css/assets.css">
         <link rel="stylesheet" href="<?php echo URLROOT;?>/public/css/style.css">
 
         <title><?php echo SITENAME; ?></title>
