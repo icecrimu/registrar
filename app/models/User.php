@@ -96,13 +96,32 @@ class User {
 
         switch($data['table_name']){
 
-            case 'indigency':
+            case 'cert_gwa':
                 $this->db->query('SELECT * FROM cert_gwa ORDER BY id DESC LIMIT 1');
 
-                $row = $this->db->single();
-                return $row;
+   
                 break;
-
+            case 'cert_units':
+                $this->db->query('SELECT * FROM cert_units ORDER BY id DESC LIMIT 1');
+                break;
         }
+
+        $row = $this->db->single();
+        return $row;
     }
+
+    public function getCertificates($data) {
+        switch($data['table_name']) {
+            case 'gwa':
+                $this->db->query('SELECT * FROM cert_gwa');
+                break;
+            case 'units': 
+                $this->db->query('SELECT * FROM cert_units');
+                break;
+        }
+        $result = $this->db->resultSet();
+        return $result;
+    }
+
+ 
 }

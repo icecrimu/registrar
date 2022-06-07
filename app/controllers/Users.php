@@ -11,6 +11,8 @@ class Users extends Controller {
             header("Location: " .URLROOT . "/users/login");
         }
 
+
+
         $data = [
 
             'title' => 'Home',   
@@ -90,19 +92,11 @@ class Users extends Controller {
         $_SESSION['user_code'] = $user->user_code;
         
 
-        if($_SESSION['account_type'] == 1 ){
-            
-            $this->session->setFlash('status','Login Successfully');
-            $this->session->setFlash('status_text','Welcome');
-            $this->session->setFlash('status_icon','success');
-           
-            header('location:' . URLROOT . '/admins/index');
-        }else {
-            $this->session->setFlash('status','Login Successfully');
-            $this->session->setFlash('status_text','Welcome');
-            $this->session->setFlash('status_icon','success');
-            header('location:' . URLROOT . '/users/index');
-        }
+        $this->session->setFlash('status','Login Successfully');
+        $this->session->setFlash('status_text','Welcome');
+        $this->session->setFlash('status_icon','success');
+        header('location:' . URLROOT . '/users/index');
+    
 
     }
 
@@ -136,6 +130,7 @@ class Users extends Controller {
                 'resNo' => trim($_POST['resNo']),
                 'seriesOf' => trim($_POST['seriesOf']),
                 'orNo' => trim($_POST['orNo']),
+                'table_name' => 'cert_gwa'
 
             ];
 
@@ -176,6 +171,68 @@ class Users extends Controller {
         $this->view('users/generate_cert_gwa', $data);
     }
 
+    public function generate_cert_units($id = ''){
 
-    
+        $data = [
+            'id' => $id,
+            'cert_type' => 'units'
+        ];
+
+        $certificate = $this->userModel->findCertificateById($data);
+        // $detail = $this->userModel->getSettingsDetails();
+
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        $data = [
+            'certificate' => $certificate,
+            // 'detail' => $detail,            
+        ];
+
+        $this->view('users/generate_cert_units', $data);
+    }
+
+    public function cert_units() {
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        $data = [
+            'table_name' => 'units',
+        ];
+
+        $certificate = $this->userModel->getCertificates($data);
+
+        $data = [
+
+            'title' => 'Home',   
+            'certificates' => $certificate
+
+        ];
+
+        $this->view('users/cert_units', $data);
+    }
+
+    public function cert_gwa() {
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        $data = [
+            'table_name' => 'gwa',
+        ];
+
+        $certificate = $this->userModel->getCertificates($data);
+
+        $data = [
+
+            'title' => 'Home',   
+            'certificates' => $certificate
+
+        ];
+
+        $this->view('users/cert_gwa', $data);
+    }
+   
 }
