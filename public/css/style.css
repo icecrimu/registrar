@@ -3,8 +3,9 @@ body {
   background: #f0f2f5;
 }
 
+
 .form-signin {
-  width: 100%;
+  width: 80%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
@@ -30,4 +31,116 @@ body {
   border-top-right-radius: 0;
 }
 
+/* Generate Certificate */
+@page  
+{ 
+    size: auto;   /* auto is the initial value */ 
+
+    /* this affects the margin in the printer settings */ 
+    margin: 20mm 20mm 20mm 20mm; 
+    
+
+} 
+
 /*  GWA cert layout  */
+#printThis{
+  width: 100%;
+  
+  align-self: center;
+}
+
+.head-gwa{
+  line-height: 0.2;
+  /* display: flex;
+  gap: 15px;
+  margin-left: 22.2em; */
+}
+.top-text{
+  margin-bottom: 10px;
+}
+
+.psu-font{
+  font-family: canterbury;
+}
+
+.head-left-text-side{
+  text-align: center;
+  padding: 1em 0 0.5em 0;
+  text-align: center;
+}
+
+.psu-logo{
+  max-width: 15%;
+  position: absolute;
+  right: 4em;
+  top: .5em;
+  /* right: 24em;
+  top: 7.7em; */
+}
+@media  (min-width: 1000px)  {
+  .psu-logo{
+    visibility: hidden;
+  }
+}
+
+.head-break{
+  border-top: 5px solid black;
+  width: 100%;
+  margin: 0.5em auto 2em 0;
+}
+
+#gwa-number{
+  font-weight: 500;
+  text-decoration: none;
+  text-decoration: underline;
+  color: #000;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.uppercase-text{
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.certification{
+  letter-spacing: 20px;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.content-text{
+  font-family: Times New Roman;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.remove-decor{
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+}
+.indent{
+  text-indent: 50px;
+}
+
+.name-and-position{
+  text-align: right;
+  color: #000;
+  line-height: 0.2;
+  margin: 4em 4em 5em 0;
+}
+.name-of-registrar{
+  text-transform: uppercase;
+}
+.name-of-position{
+  margin-right: 1.85rem;
+}
+
+.lower-text{
+  margin-top: 2.5em;
+}
+

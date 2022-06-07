@@ -10,6 +10,9 @@
         <link rel="stylesheet"  href="<?php echo URLROOT;?>/public/bootstrap-5.1.3-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo URLROOT;?>/public/css/style.css">
 
+        <!-- pang font -->
+        <link href="//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury" rel="stylesheet" type="text/css"/>
+        
         <title><?php echo SITENAME; ?></title>
     </head>
 
