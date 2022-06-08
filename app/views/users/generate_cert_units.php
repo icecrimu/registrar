@@ -51,7 +51,7 @@
                                 <h5>
                                     Cert No.: <a id="gwa-number">GWA 0018s.2022</a>
                                 </h5>
-                                <h4 class="uppercase-text certification">eto</h4>
+                                <h4 class="uppercase-text certification">certification</h4>
                                 <p class="uppercase-text">
                                     <strong>to whom it may concern:</strong>
                                 </p>
