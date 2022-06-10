@@ -1,3 +1,8 @@
+@font-face{
+  src: url(font/Canterbury.ttf);
+  font-family: canterbury;
+}
+
 body {
   /* background: #f4f7fd; */
   background: #f0f2f5;
