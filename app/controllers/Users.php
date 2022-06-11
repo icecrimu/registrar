@@ -234,5 +234,76 @@ class Users extends Controller {
 
         $this->view('users/cert_gwa', $data);
     }
+
+    public function settings() {
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+
+
+        $settings = $this->userModel->getSettingsDetails();
+        $user = $this->userModel->getUser();
+
+        $data = [
+
+            'settings' => $settings,
+            'user' => $user
+
+        ];
+
+        $this->view('users/settings', $data);
+    }
+
+    public function updateSettings() {
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $_POST = filter_input_array(INPUT_POST);
+
+            $data = [
+                'courseNo1' => trim($_POST['courseNo1']),
+                'courseNo2' => trim($_POST['courseNo2']),
+                'courseNo3' => trim($_POST['courseNo3']),
+                'courseNo4' => trim($_POST['courseNo4']),
+                'courseNo5' => trim($_POST['courseNo5']),
+                'courseNo6' => trim($_POST['courseNo6']),
+                'courseNo7' => trim($_POST['courseNo7']),
+
+                'courseDesc1' => trim($_POST['courseDesc1']),
+                'courseDesc2' => trim($_POST['courseDesc2']),
+                'courseDesc3' => trim($_POST['courseDesc3']),
+                'courseDesc4' => trim($_POST['courseDesc4']),
+                'courseDesc5' => trim($_POST['courseDesc5']),
+                'courseDesc6' => trim($_POST['courseDesc6']),
+                'courseDesc7' => trim($_POST['courseDesc7']),
+                
+                'units1' => trim($_POST['units1']),
+                'units2' => trim($_POST['units2']),
+                'units3' => trim($_POST['units3']),
+                'units4' => trim($_POST['units4']),
+                'units5' => trim($_POST['units5']),
+                'units6' => trim($_POST['units6']),
+                'units7' => trim($_POST['units7']),
+
+                'name' => trim($_POST['name']),
+                'userCode' => trim($_POST['userCode']),
+            ];
+
+                if($this->userModel->updateSettings($data) && $this->userModel->updateUser($data)){
+                    $this->session->setFlash('status', 'Settings saved!');
+                    $this->session->setFlash('status_icon', 'success');
+                    header('location: '. URLROOT . "/users/settings");
+                }else {
+                    $this->session->setFlash('status', 'Error! ');
+                    $this->session->setFlash('status_icon', 'error');
+                    header('location: '. URLROOT . '/users/settings');
+                }
+ 
+        }
+    }
    
 }

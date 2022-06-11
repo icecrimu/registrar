@@ -24,6 +24,14 @@ class User {
         return $row;
     }
 
+    public function getUser() {
+        $this->db->query('SELECT * FROM user WHERE id = 1');
+
+        $row = $this->db->single();
+
+        return $row;
+    }
+
 
     public function login($username, $password) {
         $this->db->query('SELECT * FROM user WHERE username = :username');
@@ -121,6 +129,51 @@ class User {
         }
         $result = $this->db->resultSet();
         return $result;
+    }
+
+    public function getSettingsDetails() {
+        $this->db->query('SELECT * FROM settings');
+        
+        $result =  $this->db->resultSet();
+        return $result;
+    }
+
+    public function updateSettings($data){
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo1']."'  , course_desc = '" .$data['courseDesc1'] . "', units = ' " . $data['units1'] . "' WHERE id = 1 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo2']."'  , course_desc = '" .$data['courseDesc2'] . "', units = ' " . $data['units2'] . "' WHERE id = 2 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo3']."'  , course_desc = '" .$data['courseDesc3'] . "', units = ' " . $data['units3'] . "' WHERE id = 3 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo4']."'  , course_desc = '" .$data['courseDesc4'] . "', units = ' " . $data['units4'] . "' WHERE id = 4 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo5']."'  , course_desc = '" .$data['courseDesc5'] . "', units = ' " . $data['units5'] . "' WHERE id = 5 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo6']."'  , course_desc = '" .$data['courseDesc6'] . "', units = ' " . $data['units6'] . "' WHERE id = 6 ");
+        $this->db->execute();
+        $this->db->query("UPDATE settings SET course_no =   '".$data['courseNo7']."'  , course_desc = '" .$data['courseDesc7'] . "', units = ' " . $data['units7'] . "' WHERE id = 7 ");
+
+
+        if($this->db->execute()){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    public function updateUser($data) {
+        $this->db->query('UPDATE user SET name = :name, user_code = :userCode WHERE id = 1');
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':userCode', $data['userCode']);
+
+        
+        if($this->db->execute()){
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
  
