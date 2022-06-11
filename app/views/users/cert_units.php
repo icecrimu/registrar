@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="">
-                        <button type="button" class="btn btn-primary btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalUnitsCert">
+                        <button type="button" class="btn btn-primary btn-sm rounded-pill addUnitCertbtn" data-bs-toggle="modal" data-bs-target="#modalUnitsCert">
                         <i class="fas fa-clipboard-list"></i>&nbsp; Create 
                         </button>
                     </div>

@@ -4,6 +4,9 @@
 
 <script src="<?php echo URLROOT; ?>/js/simple-datatables.js" ></script>
 
+<script src="<?php echo URLROOT; ?>/js/jquery.js" ></script>
+
+
 <!-- data tables script -->
 <script src="<?php echo URLROOT;?>/js/datatables-simple-demo.js"></script>
 

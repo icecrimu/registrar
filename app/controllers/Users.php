@@ -305,5 +305,70 @@ class Users extends Controller {
  
         }
     }
+
+    public function add_units_cert() {
+
+
+
+        $settings = $this->userModel->getSettingsDetails();
+
+        // if(!isLoggedIn()) {
+        //     header("Location: " .URLROOT . "/users/login");
+        // }
+
+
+         echo json_encode($settings);
+    }
+
+    public function modalCertUnits() {
+        if(!isLoggedIn()) {
+            header("Location: " .URLROOT . "/users/login");
+        }
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $_POST = filter_input_array(INPUT_POST);
+
+            $data = [
+                'firstname' => trim($_POST['firstname']),
+                'middlename' => trim($_POST['middlename']),
+                'lastname' => trim($_POST['lastname']),
+                'suffix' => trim($_POST['suffix']),
+                'honorific' => trim($_POST['honorific']),
+                'address' => trim($_POST['address']),
+                'course' => trim($_POST['course']),
+                'purpose' => trim($_POST['purpose']),
+                'certNo' => trim($_POST['certNo']),
+                'orNo' => trim($_POST['orNo']),
+                'percent' => trim($_POST['percent']),
+                'totalRating' => trim($_POST['totalRating']),
+
+                'rating1' => trim($_POST['rating1']),
+                'rating2' => trim($_POST['rating2']),
+                'rating3' => trim($_POST['rating3']),
+                'rating4' => trim($_POST['rating4']),
+                'rating5' => trim($_POST['rating5']),
+                'rating6' => trim($_POST['rating6']),
+                'rating7' => trim($_POST['rating7']),
+
+                'table_name' => 'cert_units',
+
+
+            ];
+
+                if($this->userModel->addCertUnits($data)){
+                    $lastId = $this->userModel->getLastId($data);
+                    $this->session->setFlash('status', 'Added successfully!');
+                    $this->session->setFlash('status_icon', 'success');
+                    header('location: '. URLROOT . "/users/generate_cert_units/$lastId->id");
+                }else {
+                    $this->session->setFlash('status', 'Error! ');
+                    $this->session->setFlash('status_icon', 'error');
+                    header('location: '. URLROOT . '/users/student');
+                }
+ 
+        }
+
+    }
    
 }
