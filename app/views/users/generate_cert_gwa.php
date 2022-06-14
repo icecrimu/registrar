@@ -50,28 +50,28 @@
 
                             <div class="content-text">
                                 <h5>
-                                    Cert No.: <a id="gwa-number">GWA 0018s.2022</a>
+                                    Cert No.: <a id="gwa-number"><?php echo $data['certificate']->cert_no ?></a>
                                 </h5>
                                 <h4 class="uppercase-text certification">certification</h4>
                                 <p class="uppercase-text">
                                     <strong>to whom it may concern:</strong>
                                 </p>
                                 <p class="indent first-paragraph">
-                                    This is to clarify that <strong><a class="remove-decor" id="name-on-text-body">Vladimere Cruz Poohtin</a></strong>, resident of <a class="remove-decor" id="brgy-on-body">Brgy. Polo, Alaminos City, Pangasinan</a> is a graduate of this University with the degree of <strong><i id="course-on-text-body">Bachelor of Secondary Education major in English (BSE EL)</i></strong> <a class="remove-decor" id="dateGrad-on-text-body">June 19, 2018</a> as per PSU Board of Regents (BOR) Resolution No. 4, series of 1018.                                
+                                    This is to clarify that <strong><a class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></a></strong>, resident of <a class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></a> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> <a class="remove-decor" id="dateGrad-on-text-body"><?php $dateGraduated = new DateTime($data['certificate']->date_graduated); echo date_format( $dateGraduated,'F j, Y') ?></a> as per PSU Board of Regents (BOR) Resolution No. <?= $data['certificate']->res_no ?>, series of <?= $data['certificate']->series_of ?>.                                
                                 </p>
                                 <p class="indent">
-                                    This is to certify further that <a class="remove-decor" id="given-on-text-body">Mr. Poothin</a> earned an <strong>over-all general weighted average of <a id="avg-on-text-body">2.122 (85%)</a></strong>.
+                                    This is to certify further that <a class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a> earned an <strong>over-all general weighted average of <a id="avg-on-text-body"><?= $data['certificate']->over_all_gwa ?></a></strong>.
                                 </p>
                                 <p class="purpose-on-text-body indent">
-                                    This certification is issued upon request of <a class="remove-decor" id="given-on-text-body">Mr. Poothin</a> for employment purposes.
+                                    This certification is issued upon request of <a class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a> for <?= $data['certificate']->purpose ?> purposes.
                                 </p>
                                 <p class="indent">
-                                    Done this <a class="remove-decor" id="dateReceivef-on-text-body">7th day of March 2022</a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
+                                    Done this <a class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
                                 </p>
 
                                 <div class="name-and-position">
                                     <p class="name-of-registrar">
-                                        Ryan D. Bangumbilyon
+                                        <?= strtoupper($data['user']->name) ?>
                                     </p>
                                     <i class="name-of-position">Acting Registrar</i>
                                 </div>
@@ -81,9 +81,9 @@
                                     University Seal
                                 </p>
                                 <p class="lower-text">
-                                    Paid Under O.R. No.: 0528674<br>
-                                    Issued on March 17, 2022<br>
-                                    /rds
+                                    Paid Under O.R. No.: <?= $data['certificate']->or_no ?><br>
+                                    Issued on <?= date('F d, Y') ?><br>
+                                    /<?= $data['user']->user_code ?>
                                 </p>
                                 <i class="lower-text">Doc. Stamp Tax Paid</i>
                             </div>

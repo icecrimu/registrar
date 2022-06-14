@@ -188,13 +188,15 @@ class Users extends Controller {
         $certificate = $this->userModel->findCertificateById($data);
         // $detail = $this->userModel->getSettingsDetails();
 
+        $user = $this->userModel->getUser();
+
         if(!isLoggedIn()) {
             header("Location: " .URLROOT . "/users/login");
         }
 
         $data = [
             'certificate' => $certificate,
-            // 'detail' => $detail,            
+            'user' => $user         
         ];
 
         $this->view('users/generate_cert_gwa', $data);
