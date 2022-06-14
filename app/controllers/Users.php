@@ -116,6 +116,34 @@ class Users extends Controller {
             $_POST = filter_input_array(INPUT_POST);
 
             $data = [
+                'table_name' =>  'cert_gwa'
+            ];
+
+            $lastId = $this->userModel->getLastId($data);
+
+            if($lastId->cert_no) {
+
+                $certNo = $lastId->cert_no;
+
+                $year = $certNo[10].$certNo[11].$certNo[12].$certNo[13];
+
+                if($year == date('Y')) {
+                    $dateId = date('Y');   
+                }else {
+                    $dateId = date('Y') -1;
+                    $certNo = 'GWA 0000s.'.$dateId;
+                }
+
+            }else {
+                $dateId = date('Y');
+                $certNo = 'GWA 0000s.'.date('Y');
+            }
+
+            $get_number = str_replace(['GWA ', 's.', $dateId], '', $certNo);
+            $get_increase = $get_number+1;
+            $get_string = str_pad($get_increase, '4', '0', STR_PAD_LEFT);
+
+            $data = [
                 'firstname' => trim($_POST['firstname']),
                 'middlename' => trim($_POST['middlename']),
                 'lastname' => trim($_POST['lastname']),
@@ -125,7 +153,8 @@ class Users extends Controller {
                 'course' => trim($_POST['course']),
                 'purpose' => trim($_POST['purpose']),
                 'dateGraduated' => trim($_POST['dateGraduated']),
-                'certNo' => trim($_POST['certNo']),
+                // 'certNo' => trim($_POST['certNo']),
+                'certNo' => 'GWA '.$get_string.'s.'.date('Y'),
                 'overAllGwa' => trim($_POST['overAllGwa']),
                 'resNo' => trim($_POST['resNo']),
                 'seriesOf' => trim($_POST['seriesOf']),
@@ -330,6 +359,34 @@ class Users extends Controller {
             $_POST = filter_input_array(INPUT_POST);
 
             $data = [
+                'table_name' =>  'cert_units'
+            ];
+
+            $lastId = $this->userModel->getLastId($data);
+
+            if($lastId->cert_no) {
+
+                $certNo = $lastId->cert_no;
+
+                $year = $certNo[10].$certNo[11].$certNo[12].$certNo[13];
+
+                if($year == date('Y')) {
+                    $dateId = date('Y');   
+                }else {
+                    $dateId = date('Y') -1;
+                    $certNo = 'ACC-0000s.'.$dateId;
+                }
+
+            }else {
+                $dateId = date('Y');
+                $certNo = 'ACC-0000s.'.date('Y');
+            }
+
+            $get_number = str_replace(['ACC-', 's.', $dateId], '', $certNo);
+            $get_increase = $get_number+1;
+            $get_string = str_pad($get_increase, '4', '0', STR_PAD_LEFT);
+
+            $data = [
                 'firstname' => trim($_POST['firstname']),
                 'middlename' => trim($_POST['middlename']),
                 'lastname' => trim($_POST['lastname']),
@@ -338,7 +395,7 @@ class Users extends Controller {
                 'address' => trim($_POST['address']),
                 'course' => trim($_POST['course']),
                 'purpose' => trim($_POST['purpose']),
-                'certNo' => trim($_POST['certNo']),
+                'certNo' => 'ACC-'.$get_string.'s.'.date('Y'),
                 'orNo' => trim($_POST['orNo']),
                 'percent' => trim($_POST['percent']),
                 'totalRating' => trim($_POST['totalRating']),
