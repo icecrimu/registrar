@@ -89,7 +89,7 @@ body {
 }
 
 .head-break{
-  border-top: 5px solid black;
+  border-bottom: 5px #000000 solid;
   width: 100%;
   margin: 0.5em auto 2em 0;
 }
@@ -111,7 +111,7 @@ body {
 }
 
 .certification{
-  letter-spacing: 20px;
+  letter-spacing: 10px;
   text-align: center;
   margin-top: 2em;
   margin-bottom: 2em;

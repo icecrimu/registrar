@@ -46,7 +46,7 @@
 
                             </div>
 
-                            <hr class="head-break">
+                            <div class="head-break"></div>
 
                             <div class="content-text">
                                 <h5>
