@@ -177,8 +177,8 @@ class User {
     }
 
     public function addCertUnits($data) {
-        $this->db->query('INSERT INTO cert_units (firstname, middlename, lastname, suffix, honorific, address, course, purpose, cert_no, or_no, percent, total_rating, rating_no1, rating_no2, rating_no3, rating_no4, rating_no5, rating_no6, rating_no7) 
-        VALUES (:firstname,:middlename, :lastname, :suffix, :honorific, :address, :course, :purpose,  :certNo, :orNo, :percent, :totalRating, :ratingNo1, :ratingNo2, :ratingNo3, :ratingNo4, :ratingNo5, :ratingNo6, :ratingNo7 )');
+        $this->db->query('INSERT INTO cert_units (firstname, middlename, lastname, suffix, honorific, address, course, purpose, cert_no, or_no, rating_no1, rating_no2, rating_no3, rating_no4, rating_no5, rating_no6, rating_no7) 
+        VALUES (:firstname,:middlename, :lastname, :suffix, :honorific, :address, :course, :purpose,  :certNo, :orNo, :ratingNo1, :ratingNo2, :ratingNo3, :ratingNo4, :ratingNo5, :ratingNo6, :ratingNo7 )');
         
             $this->db->bind(':firstname', $data['firstname']);
             $this->db->bind(':middlename', $data['middlename']);
@@ -190,8 +190,6 @@ class User {
             $this->db->bind(':purpose', $data['purpose']);
             $this->db->bind(':certNo', $data['certNo']);
             $this->db->bind(':orNo', $data['orNo']);
-            $this->db->bind(':percent', $data['percent']);
-            $this->db->bind(':totalRating', $data['totalRating']);
             $this->db->bind(':ratingNo1', $data['rating1']);
             $this->db->bind(':ratingNo2', $data['rating2']);
             $this->db->bind(':ratingNo3', $data['rating3']);

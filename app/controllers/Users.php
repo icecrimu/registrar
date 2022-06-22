@@ -210,7 +210,107 @@ class Users extends Controller {
         ];
 
         $certificate = $this->userModel->findCertificateById($data);
-        // $detail = $this->userModel->getSettingsDetails();
+        $detail = $this->userModel->getSettingsDetails();
+        $user = $this->userModel->getUser();
+
+        $totalUnits = 0;
+        foreach($detail as $item){
+            $totalUnits = $totalUnits + $item->units;
+        }
+
+        $totalUnits = $totalUnits - $detail[6]->units;
+
+        $totalRatings = ($certificate->rating_no1*$detail[0]->units) + ($certificate->rating_no2*$detail[1]->units) + ($certificate->rating_no3*$detail[2]->units) + ($certificate->rating_no4*$detail[3]->units) + ($certificate->rating_no5*$detail[4]->units) + ($certificate->rating_no6*$detail[5]->units);
+
+        $totalRatings = $totalRatings / $totalUnits;
+
+        switch(true) {
+            case $totalRatings <= 1.03: 
+                $percent = 100;
+                break;
+            case $totalRatings <= 1.06:
+                $percent = 99;
+                break;
+            case $totalRatings <= 1.09:
+                $percent = 98;
+                break;
+            case $totalRatings <= 1.12:
+                $percent = 97;
+                break;
+            case $totalRatings <= 1.20: 
+                $percent = 96;
+                break;
+            case $totalRatings <= 1.29:
+                $percent = 95;
+                break;
+            case $totalRatings <= 1.37:
+                $percent = 94;
+                break;
+            case $totalRatings <= 1.45:
+                $percent = 93;
+                break;
+            case $totalRatings <= 1.54:
+                $percent = 92;
+                break;
+            case $totalRatings <= 1.62:
+                $percent = 91;
+                break;
+            case $totalRatings <= 1.70:
+                $percent = 90;
+                break;
+            case $totalRatings <= 1.79:
+                $percent = 89;
+                break;
+            case $totalRatings <= 1.87: 
+                $percent = 88;
+                break;
+            case $totalRatings <= 1.95:
+                $percent = 87;
+                break;
+            case $totalRatings <= 2.04:
+                $percent = 86;
+                break;
+            case $totalRatings <= 2.12:
+                $percent = 85;
+                break;
+            case $totalRatings <= 2.20:
+                $percent = 84;
+                break;
+            case $totalRatings <= 2.29:
+                $percent = 83;
+                break;
+            case $totalRatings <= 2.37:
+                $percent = 82;
+                break;
+            case $totalRatings <= 2.45:
+                $percent = 81;
+                break;
+            case $totalRatings <= 2.54: 
+                $percent = 80;
+                break;
+            case $totalRatings <= 2.62:
+                $percent = 79;
+                break;
+            case $totalRatings <= 2.70:
+                $percent = 78;
+                break;
+            case $totalRatings <= 2.79:
+                $percent = 77;
+                break;
+            case $totalRatings <= 2.87:
+                $percent = 76;
+                break;
+            case $totalRatings <= 3.45:
+                $percent = 75;
+                break;
+            case $totalRatings <= 4.54:
+                $percent = 74;
+                break;
+            default :
+                $percent = 73;
+        }
+
+  
 
         if(!isLoggedIn()) {
             header("Location: " .URLROOT . "/users/login");
@@ -218,7 +318,11 @@ class Users extends Controller {
 
         $data = [
             'certificate' => $certificate,
-            // 'detail' => $detail,            
+            'user' => $user,
+            'detail' => $detail,    
+            'totalUnits' => $totalUnits,
+            'totalRatings' => $totalRatings,
+            'percent' => $percent 
         ];
 
         $this->view('users/generate_cert_units', $data);
@@ -399,9 +503,6 @@ class Users extends Controller {
                 'purpose' => trim($_POST['purpose']),
                 'certNo' => 'ACC-'.$get_string.'s.'.date('Y'),
                 'orNo' => trim($_POST['orNo']),
-                'percent' => trim($_POST['percent']),
-                'totalRating' => trim($_POST['totalRating']),
-
                 'rating1' => trim($_POST['rating1']),
                 'rating2' => trim($_POST['rating2']),
                 'rating3' => trim($_POST['rating3']),

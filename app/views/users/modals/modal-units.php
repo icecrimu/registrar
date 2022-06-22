@@ -37,7 +37,7 @@
 
                                     <div class="col-4 input-group-sm">
                                         <label for="addPurpose" class="col-form-label-sm">Purpose</label>
-                                        <input type="text" name="purpose" class="form-control" id="addPurpose"required >
+                                        <input type="text" name="purpose" value="employment" class="form-control" id="addPurpose"required >
                                     </div>
                                     
                                     <div class="col-12 input-group-sm">
@@ -162,20 +162,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4 input-group-sm">
-                                        <label for="addGpaPercent" class="col-form-label-sm">GPA (Percent)</label>
-                                        <input type="number" name="percent" class="form-control" id="addGpaPercent"required >
-                                    </div>
-
-                                    <div class="col-4 input-group-sm">
-                                        <label for="addTotalRating" class="col-form-label-sm">Total Rating</label>
-                                        <input type="text" name="totalRating" class="form-control" id="addTotalRating"required >
-                                    </div>  
-
-                                    <div class="col-4 input-group-sm">
-                                        <label for="addCertNo" class="col-form-label-sm">Certificate No.</label>
-                                        <input type="text" name="certNo" class="form-control" id="addCertNo">
-                                    </div>   
 
                                     <div class="col-4 input-group-sm">
                                         <label for="addORno" class="col-form-label-sm">O.R No.</label>

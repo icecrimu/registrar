@@ -41,7 +41,7 @@
                                 </div>
 
                                 <div class="head-right-logo-side">
-                                    <img class="psu-logo" src="..\..\img\logo.png" alt="psu-logo">
+                                    <img class="psu-logo" src="<?php echo URLROOT .'/img/logo.png' ?>" alt="psu-logo">
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@
 
                             <div class="content-text">
                                 <h5>
-                                    Cert No.: <a id="gwa-number">GWA 0018s.2022</a>
+                                    Cert No.: <a id="gwa-number"><?php echo $data['certificate']->cert_no ?></a>
                                 </h5>
                                 <h4 class="uppercase-text certification">certification</h4>
                                 <p class="uppercase-text">
@@ -57,7 +57,7 @@
                                 </p>
 
                                 <p class="indent">
-                                    This is to certify that <strong><a class="remove-decor" id="name-on-text-body">Mr. Marky DAVID Bomboa</a></strong>, resident of <a class="remove-decor" id="brgy-on-body">Brgy. Ambabaay, Bani, Pangasinan</a> is a graduate of this University with the degree of <strong><i id="course-on-text-body">Bachelor of Elementary Education major in Enhanced General Education (BEED EGE)</i></strong> took and passed the following Professional Education Subjects – Field Study, to wit:
+                                    This is to certify that <strong><a class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></a></strong>, resident of <a class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></a> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> took and passed the following Professional Education Subjects – Field Study, to wit:
                                 </p>
 
                                 <table class="table-units-middle">
@@ -73,64 +73,64 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Prof Ed 115</td>
-                                            <td>Field Study 1</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][0]->course_no ?></td>
+                                            <td><?= $data['detail'][0]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no1 ?></td>
+                                            <td><?= $data['detail'][0]->units ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Prof Ed 116</td>
-                                            <td>Field Study 2</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][1]->course_no ?></td>
+                                            <td><?= $data['detail'][1]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no2 ?></td>
+                                            <td><?= $data['detail'][1]->units ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Prof Ed 117</td>
-                                            <td>Field Study 3</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][2]->course_no ?></td>
+                                            <td><?= $data['detail'][2]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no3 ?></td>
+                                            <td><?= $data['detail'][2]->units ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Prof Ed 118</td>
-                                            <td>Field Study 4</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][3]->course_no ?></td>
+                                            <td><?= $data['detail'][3]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no4 ?></td>
+                                            <td><?= $data['detail'][3]->units ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Prof Ed 119</td>
-                                            <td>Field Study 5</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][4]->course_no ?></td>
+                                            <td><?= $data['detail'][4]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no5 ?></td>
+                                            <td><?= $data['detail'][4]->units ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Prof Ed 120</td>
-                                            <td>Field Study 6</td>
-                                            <td>1.75</td>
-                                            <td>1</td>
+                                            <td><?= $data['detail'][5]->course_no ?></td>
+                                            <td><?= $data['detail'][5]->course_desc ?></td>
+                                            <td><?= $data['certificate']->rating_no6 ?></td>
+                                            <td><?= $data['detail'][5]->units ?></td>
                                         </tr>
                                         <tr>
                                             <td class="gpa-table"><strong>GPA:</strong></td>
-                                            <td class="percent-table"><strong>(92%)</strong></td>
-                                            <td><strong>1.54</strong></td>
-                                            <td><strong>6</strong></td>
+                                            <td class="percent-table"><strong>(<?= $data['percent'] ?>%)</strong></td>
+                                            <td><strong><?= number_format($data['totalRatings'],2) ?></strong></td>
+                                            <td><strong><?= $data['totalUnits'] ?></strong></td>
                                             
                                         </tr>
                                     </tbody>
                                 </table>
 
                                 <p class="indent">
-                                    This is to certify further that <a class="remove-decor">Mr. Bomboa</a>, earned a rating of <strong><a class="remove-decor">1.25</a></strong> in <strong>Prof Ed 121 – Practice Teaching</strong> (6 units).
+                                    This is to certify further that <a class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a>, earned a rating of <strong><a class="remove-decor"><?= $data['certificate']->rating_no7 ?></a></strong> in <strong><?= $data['detail'][6]->course_no ?> – <?= $data['detail'][6]->course_desc ?></strong> (<?= $data['detail'][6]->units ?> units).
                                 </p>
                                 <p class="indent">
-                                    This certification is issued upon request of <strong><a class="remove-decor">Mr. Bomboa</a></strong> for employment purposes only.
+                                    This certification is issued upon request of <strong><a class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a></strong> for <?= $data['certificate']->purpose ?> purposes only.
                                 </p>
                                 <p class="indent">
-                                    Given this <a class="remove-decor" id="dateReceivef-on-text-body">5th day of February 2021</a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
+                                    Given this <a class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
                                 </p>
                             
                                 <div class="name-and-position">
                                     <p class="name-of-registrar">
-                                        Ryan D. Bangumbilyon
+                                    <?= strtoupper($data['user']->name) ?>
                                     </p>
                                     <i class="name-of-position">Acting Registrar</i>
                                 </div>
@@ -140,9 +140,9 @@
                                     University Seal
                                 </p>
                                 <p class="lower-text">
-                                    Paid Under O.R. No.: 0528674<br>
-                                    Issued on March 17, 2022<br>
-                                    /rds
+                                    Paid Under O.R. No.: <?= $data['certificate']->or_no ?><br>
+                                    Issued on <?= date('F d, Y') ?><br>
+                                    /<?= $data['user']->user_code ?>
                                 </p>
                                 <i class="lower-text">Doc. Stamp Tax Paid</i>
                             </div>
