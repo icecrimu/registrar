@@ -194,9 +194,98 @@ class Users extends Controller {
             header("Location: " .URLROOT . "/users/login");
         }
 
+        $totalRatings = $certificate->over_all_gwa;
+
+        switch(true) {
+            case $totalRatings <= 1.03: 
+                $percent = 100;
+                break;
+            case $totalRatings <= 1.06:
+                $percent = 99;
+                break;
+            case $totalRatings <= 1.09:
+                $percent = 98;
+                break;
+            case $totalRatings <= 1.12:
+                $percent = 97;
+                break;
+            case $totalRatings <= 1.20: 
+                $percent = 96;
+                break;
+            case $totalRatings <= 1.29:
+                $percent = 95;
+                break;
+            case $totalRatings <= 1.37:
+                $percent = 94;
+                break;
+            case $totalRatings <= 1.45:
+                $percent = 93;
+                break;
+            case $totalRatings <= 1.54:
+                $percent = 92;
+                break;
+            case $totalRatings <= 1.62:
+                $percent = 91;
+                break;
+            case $totalRatings <= 1.70:
+                $percent = 90;
+                break;
+            case $totalRatings <= 1.79:
+                $percent = 89;
+                break;
+            case $totalRatings <= 1.87: 
+                $percent = 88;
+                break;
+            case $totalRatings <= 1.95:
+                $percent = 87;
+                break;
+            case $totalRatings <= 2.04:
+                $percent = 86;
+                break;
+            case $totalRatings <= 2.12:
+                $percent = 85;
+                break;
+            case $totalRatings <= 2.20:
+                $percent = 84;
+                break;
+            case $totalRatings <= 2.29:
+                $percent = 83;
+                break;
+            case $totalRatings <= 2.37:
+                $percent = 82;
+                break;
+            case $totalRatings <= 2.45:
+                $percent = 81;
+                break;
+            case $totalRatings <= 2.54: 
+                $percent = 80;
+                break;
+            case $totalRatings <= 2.62:
+                $percent = 79;
+                break;
+            case $totalRatings <= 2.70:
+                $percent = 78;
+                break;
+            case $totalRatings <= 2.79:
+                $percent = 77;
+                break;
+            case $totalRatings <= 2.87:
+                $percent = 76;
+                break;
+            case $totalRatings <= 3.45:
+                $percent = 75;
+                break;
+            case $totalRatings <= 4.54:
+                $percent = 74;
+                break;
+            default :
+                $percent = 73;
+        }
+
         $data = [
             'certificate' => $certificate,
-            'user' => $user         
+            'user' => $user,
+            'percent' => $percent      
         ];
 
         $this->view('users/generate_cert_gwa', $data);
