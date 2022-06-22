@@ -41,12 +41,12 @@
                                 </div>
 
                                 <div class="head-right-logo-side">
-                                    <img class="psu-logo" src="..\..\public\img\logo.png" alt="psu-logo">
+                                    <img class="psu-logo" src="..\..\img\logo.png" alt="psu-logo">
                                 </div>
 
                             </div>
 
-                            <hr class="head-break">
+                            <div class="head-break"></div>
 
                             <div class="content-text">
                                 <h5>
