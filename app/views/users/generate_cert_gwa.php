@@ -7,10 +7,8 @@
 <main>
     <div class="container px-2">
 
-    <h3 class="mt-4">Generate Certificate</h3>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Generate Certificate</li>
-        </ol>
+    <h5 class="mt-4"><button class="btn btn-outline-secondary" onclick="history.back()"><i class="fas fa-arrow-left"></i>&nbsp;Go Back</button></h5>
+
         <div class="page-inner">
             <div class="row mt--2">
                 <div class="col-md-12">
@@ -19,7 +17,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-6 col-md-10">
-                                    GWA Certification
+                                    Generate Certificate
                                 </div>
                                 <div class="col-6 col-md-2  d-grid gap-2">
                                     <button class="btn btn-primary btn-sm" onclick="printDiv('printThis')">

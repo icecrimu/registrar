@@ -7,6 +7,10 @@
 
 <main>
     <div class="container px-2">
+
+        <h5 class="mt-4"><button class="btn btn-outline-secondary" onclick="history.back()"><i class="fas fa-arrow-left"></i>&nbsp;Go Back</button></h5>
+
+
         <div class="card mb-2 col-12 offset-md-2 col-md-8 mt-3 mb-5">
             <div class="card-header">
                 <div class="row">

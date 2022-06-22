@@ -8,7 +8,7 @@
     <div class="container px-2">
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="offset-2 col-sm-4">
                 <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Units Certification</h5>
@@ -17,7 +17,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">GWA Certification</h5>
