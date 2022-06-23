@@ -47,7 +47,7 @@
 
                                     <div class="col-12 input-group-sm">
                                         <label for="addCourse" class="col-form-label-sm">Course</label>
-                                        <select id="addCourse" name="course" class="form-select">
+                                        <select id="addCourse" name="course" class="form-select" required>
                                             <option value="" selected>Select course</option>
                                             <option value="Bachelor of Elementary Education major in Enhanced General Education (BEEd EGE)">Bachelor of Elementary Education major in Enhanced General Education</option>
                                             <option value="Bachelor of Secondary Education major in Mathematics (BSE MATH)">Bachelor of Secondary Education major in Mathematics</option>
@@ -114,25 +114,25 @@
                                         <label class="col-form-label-sm">Rating</label>
                                         <div class="row gy-1">
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating1" class="form-control">
+                                                <input type="text" name="rating1" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating2" class="form-control">
+                                                <input type="text" name="rating2" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating3" class="form-control">
+                                                <input type="text" name="rating3" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating4" class="form-control">
+                                                <input type="text" name="rating4" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating5" class="form-control">
+                                                <input type="text" name="rating5" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating6" class="form-control">
+                                                <input type="text" name="rating6" class="form-control" required>
                                             </div>
                                             <div class="input-group-sm">
-                                                <input type="text" name="rating7" class="form-control">
+                                                <input type="text" name="rating7" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>

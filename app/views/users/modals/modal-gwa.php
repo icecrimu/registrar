@@ -37,7 +37,7 @@
 
                                     <div class="col-4 input-group-sm">
                                         <label for="addPurpose" class="col-form-label-sm">Purpose</label>
-                                        <input type="text" name="purpose" class="form-control" id="addPurpose"required >
+                                        <input type="text" name="purpose" value="employment" class="form-control" id="addPurpose"required >
                                     </div>
                                     
                                     <div class="col-12 input-group-sm">
@@ -47,7 +47,7 @@
 
                                     <div class="col-12 input-group-sm">
                                         <label for="addCourse" class="col-form-label-sm">Course</label>
-                                        <select id="addCourse" name="course" class="form-select">
+                                        <select id="addCourse" name="course" class="form-select" required>
                                             <option value="" selected>Select course</option>
                                             <option value="Bachelor of Elementary Education major in Enhanced General Education (BEEd EGE)">Bachelor of Elementary Education major in Enhanced General Education</option>
                                             <option value="Bachelor of Secondary Education major in Mathematics (BSE MATH)">Bachelor of Secondary Education major in Mathematics</option>
@@ -71,17 +71,12 @@
 
                                     <div class="col-4 input-group-sm">
                                         <label for="addResNo" class="col-form-label-sm">BOR Resolution No.</label>
-                                        <input type="number" name="resNo" class="form-control" id="addResNo">
+                                        <input type="number" name="resNo" value="4" class="form-control" id="addResNo" required>
                                     </div>   
 
                                     <div class="col-4 input-group-sm">
-                                        <label for="addSeriesOf" class="col-form-label-sm">Series of</label>
-                                        <input type="number" name="seriesOf" class="form-control" id="addSeriesOf">
-                                    </div>   
-
-                                    <div class="col-4 input-group-sm">
-                                        <label for="addCertNo" class="col-form-label-sm">Certificate No.</label>
-                                        <input type="text" name="certNo" class="form-control" id="addCertNo">
+                                        <label for="addSeriesOf" class="col-form-label-sm">Series of:</label>
+                                        <input type="number" name="seriesOf" value="2018" class="form-control" id="addSeriesOf" required>
                                     </div>   
 
                                     <div class="col-4 input-group-sm">
