@@ -121,10 +121,10 @@ class User {
     public function getCertificates($data) {
         switch($data['table_name']) {
             case 'gwa':
-                $this->db->query('SELECT * FROM cert_gwa');
+                $this->db->query('SELECT * FROM cert_gwa ORDER BY date_created DESC');
                 break;
             case 'units': 
-                $this->db->query('SELECT * FROM cert_units');
+                $this->db->query('SELECT * FROM cert_units ORDER BY date_created DESC');
                 break;
         }
         $result = $this->db->resultSet();
