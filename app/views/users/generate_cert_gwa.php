@@ -55,16 +55,16 @@
                                     <strong>to whom it may concern:</strong>
                                 </p>
                                 <p class="indent first-paragraph">
-                                    This is to clarify that <strong><a class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></a></strong>, resident of <a class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></a> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> <a class="remove-decor" id="dateGrad-on-text-body"><?php $dateGraduated = new DateTime($data['certificate']->date_graduated); echo date_format( $dateGraduated,'F j, Y') ?></a> as per PSU Board of Regents (BOR) Resolution No. <?= $data['certificate']->res_no ?>, series of <?= $data['certificate']->series_of ?>.                                
+                                    This is to clarify that <strong><font class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></font></strong>, resident of <font class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></font> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> <a class="remove-decor" id="dateGrad-on-text-body"><?php $dateGraduated = new DateTime($data['certificate']->date_graduated); echo date_format( $dateGraduated,'F j, Y') ?></a> as per PSU Board of Regents (BOR) Resolution No. <?= $data['certificate']->res_no ?>, series of <?= $data['certificate']->series_of ?>.                                
                                 </p>
                                 <p class="indent">
-                                    This is to certify further that <a class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a> earned an <i><strong>over-all general weighted average of <a id="avg-on-text-body"><?= $data['certificate']->over_all_gwa ?> (<?= $data['percent']?>%)</a></strong></i>.
+                                    This is to certify further that <font class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></font> earned an <i><strong>over-all general weighted average of <font id="avg-on-text-body"><?= $data['certificate']->over_all_gwa ?> (<?= $data['percent']?>%)</font></strong></i>.
                                 </p>
                                 <p class="purpose-on-text-body indent">
-                                    This certification is issued upon request of <a class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a> for <?= $data['certificate']->purpose ?> purposes.
+                                    This certification is issued upon request of <font class="remove-decor" id="given-on-text-body"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></font> for <?= $data['certificate']->purpose ?> purposes.
                                 </p>
                                 <p class="indent">
-                                    Done this <a class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
+                                    Done this <span class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></span>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
                                 </p>
 
                                 <div class="name-and-position">

@@ -55,7 +55,7 @@
                                 </p>
 
                                 <p class="indent">
-                                    This is to certify that <strong><a class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></a></strong>, resident of <a class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></a> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> took and passed the following Professional Education Subjects – Field Study, to wit:
+                                    This is to certify that <strong><span class="remove-decor" id="name-on-text-body"><?= $data['certificate']->honorific .' ' . strtoupper( $data['certificate']->firstname.' ') . $data['certificate']->middlename .' '. strtoupper($data['certificate']->lastname) ?></span></strong>, resident of <font class="remove-decor" id="brgy-on-body"><?= $data['certificate']->address ?></font> is a graduate of this University with the degree of <strong><i id="course-on-text-body"><?= $data['certificate']->course ?></i></strong> took and passed the following Professional Education Subjects – Field Study, to wit:
                                 </p>
 
                                 <table class="table-units-middle">
@@ -117,13 +117,13 @@
                                 </table>
 
                                 <p class="indent">
-                                    This is to certify further that <a class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a>, earned a rating of <strong><a class="remove-decor"><?= $data['certificate']->rating_no7 ?></a></strong> in <strong><?= $data['detail'][6]->course_no ?> – <?= $data['detail'][6]->course_desc ?></strong> (<?= $data['detail'][6]->units ?> units).
+                                    This is to certify further that <span class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></span>, earned a rating of <strong><span class="remove-decor"><?= $data['certificate']->rating_no7 ?></span></strong> in <strong><?= $data['detail'][6]->course_no ?> – <?= $data['detail'][6]->course_desc ?></strong> (<?= $data['detail'][6]->units ?> units).
                                 </p>
                                 <p class="indent">
-                                    This certification is issued upon request of <strong><a class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></a></strong> for <?= $data['certificate']->purpose ?> purposes only.
+                                    This certification is issued upon request of <strong><span class="remove-decor"><?= $data['certificate']->honorific ?> <?= $data['certificate']->lastname?></span></strong> for <?= $data['certificate']->purpose ?> purposes only.
                                 </p>
                                 <p class="indent">
-                                    Given this <a class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></a>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
+                                    Given this <span class="remove-decor" id="dateReceivef-on-text-body"><?= date('jS') ?></span> day of <span><?= date('F Y') ?></span>, at the PSU-Alaminos City Campus, Alaminos City, Pangasinan.
                                 </p>
                             
                                 <div class="name-and-position">

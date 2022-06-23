@@ -82,7 +82,7 @@ body {
   /* right: 24em;
   top: 7.7em; */
 }
-@media  (min-width: 1000px)  {
+@media  (min-width: 680px)  {
   .psu-logo{
     visibility: hidden;
   }
