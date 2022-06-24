@@ -7,7 +7,7 @@
 <main>
     <div class="container px-2">
 
-    <h5 class="mt-4"><button class="btn btn-outline-secondary" onclick="history.back()"><i class="fas fa-arrow-left"></i>&nbsp;Go Back</button></h5>
+    <h5 class="mt-4"><a class="btn btn-outline-secondary" href="<?php echo URLROOT; '/users/cert_units' ?>"><i class="fas fa-arrow-left"></i>&nbsp;Go Back</a></h5>
 
         <div class="page-inner">
             <div class="row mt--2">
